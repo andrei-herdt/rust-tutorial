@@ -16,4 +16,12 @@ fn main() {
     let spaces = "    ";
     let spaces = spaces.len();
     println!("The length of spaces is {}", spaces);
+
+    let heart_eyed_cat = '😻';
+    println!("The heart_eyed_cat is {}", heart_eyed_cat);
+
+    let tup: (i32, f64, u8) = (500, 500.1, 10);
+    println!("The tuple is x:{},y:{},z:{}", tup.0,tup.1,tup.2);
+    let (x,y,z) = tup;
+    println!("The tuple is x:{},y:{},z:{}", x,y,z);
 }
