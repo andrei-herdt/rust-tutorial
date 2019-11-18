@@ -30,7 +30,6 @@ fn main() {
 
     another_function(5);
 
-    let x = 3;
     let y = {
         let x = 4;
         x + 1
@@ -49,8 +48,24 @@ fn main() {
     for x in (1..4).rev() {
         println!("x: {}", x);
     }
+
+    let name = String::from("Andrei Herdt");
+    println!("Full name is: {}", name);
+    let first_name = take_first_word(&name[..]);
+    println!("First name is: {}", first_name);
+
 }
 
+fn take_first_word(s: &str) -> &str{
+    let bytes = s.as_bytes();
+    for (i, &item) in bytes.iter().enumerate(){
+        if item == b' '{
+            return &s[0..i];
+        }
+    }
+
+    &s[..]
+}
 fn another_function(x: i32)
 {
     println!("The input to another_function is {}", x);
